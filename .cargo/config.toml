@@ -1,0 +1,12 @@
+# this should probably be created as needed for each binary crate instead of
+# being set at the workspace level.
+
+# doing this because rust-analyzer in zed doesn't like nested workspaces
+
+[build]
+rustflags = ["-Cpanic=abort"]
+
+[unstable]
+panic-abort-tests = true
+build-std = ["core", "alloc"]
+build-std-features = []

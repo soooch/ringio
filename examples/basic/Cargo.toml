@@ -1,0 +1,13 @@
+[package]
+name = "basic"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+atomic-dbg = { version = "0.1.11", default-features = false }
+origin = { version = "0.25.1", default-features = false, features = [
+    "nightly",
+    "origin-start",
+] }
+
+ringio.path = "../.."

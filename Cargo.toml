@@ -1,0 +1,30 @@
+[workspace]
+resolver = "3"
+members = ["examples/*"]
+
+[workspace.dependencies]
+origin = { version = "0.25.1", default-features = false, features = [
+    "nightly",
+] }
+rustix = { version = "1.0.0", default-features = false }
+rustix-uring = { version = "0.4.0", default-features = false }
+
+[workspace.package]
+authors = ["Suchir Kavi <suchirkavi@gmail.com>"]
+license = "GPL-2.0-or-later"
+repository = "https://github.com/soooch/ringio"
+
+[package]
+name = "ringio"
+version = "0.1.0"
+authors.workspace = true
+license.workspace = true
+description = "A fully async, io_uring based std alternative which doesn't exist yet"
+readme = "README.md"
+repository.workspace = true
+edition = "2024"
+
+[dependencies]
+origin = { workspace = true, features = ["origin-start", "signal", "thread"] }
+rustix = { workspace = true }
+rustix-uring.workspace = true
